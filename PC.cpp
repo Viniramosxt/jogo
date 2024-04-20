@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+  float rendaMes, rendaTotal;
+  int mes = 1;
+  rendaTotal = 0;
+
+  for (int cont = 0; cont < 5; cont++) {
+    printf("Qual foi sua renda do mês %d?\n", mes); // Mostrar o número do mês
+    scanf("%f", &rendaMes);
+
+    if (rendaMes < 0) {
+      printf("Erro: Valor de renda inválido. Digite um valor positivo.\n");
+      continue; // Ignorar o mês atual se a renda for inválida
+    }
+
+    rendaTotal += rendaMes;
+    printf("Sua renda do mês %d foi de: R$ %.2f e sua renda total é de: R$ %.2f\n", mes, rendaMes, rendaTotal);
+    mes++;
+  }
+
+  if (rendaTotal > 3500) {
+    printf("PARABENS, VOCÊ CONSEGUIU DINHEIRO PARA MONTAR O PC!");
+  } else {
+    printf("Que pena, não rolou de montar seu pc dessa vez.");
+  }
+  
+  return 0;
+}
